@@ -40,6 +40,21 @@ nav {
     letter-spacing: 2px;
 }
 
+/* Ícone de menu hambúrguer */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.menu-toggle .bar {
+    height: 3px;
+    width: 25px;
+    background-color: #000;
+    margin: 4px 0;
+    transition: all 0.3s ease;
+}
+
 .nav-links {
     list-style: none;
     display: flex;
@@ -54,6 +69,7 @@ nav {
     letter-spacing: 1px;
 }
 
+/* Botão de Contato */
 .contact-btn {
     padding: 12px 24px;
     border: 2px solid #000;
@@ -173,17 +189,35 @@ nav {
 
 /* Responsividade para telas menores */
 @media (max-width: 768px) {
+    .menu-toggle {
+        display: flex; /* Exibe o ícone do menu no mobile */
+    }
+
+    .nav-links {
+        display: none; /* Oculta os links de navegação */
+        flex-direction: column;
+        width: 100%;
+        background-color: #fff;
+        position: absolute;
+        top: 80px; /* Posição logo abaixo do header */
+        left: 0;
+        z-index: 999; /* Fica acima de outros elementos */
+    }
+
+    .nav-links.active {
+        display: flex; /* Mostra os links de navegação ao clicar no menu */
+    }
+
+    .nav-links li {
+        padding: 10px 20px;
+    }
+
     .hero-content h1 {
         font-size: 3rem;
     }
 
     .hero-content p {
         font-size: 1.5rem;
-    }
-
-    .nav-links {
-        flex-direction: column;
-        gap: 10px;
     }
 
     .cta-btn {
@@ -210,7 +244,7 @@ nav {
     display: flex;
     justify-content: space-between;
     gap: 20px;
-    flex-wrap: wrap; /* Isso garante que os cards se alinhem corretamente em telas menores */
+    flex-wrap: wrap; /* Alinha os cards corretamente em telas menores */
 }
 
 .card {
