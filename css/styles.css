@@ -11,14 +11,22 @@ html, body {
 }
 
 body {
+<<<<<<< HEAD
   font-family: 'Poppins', sans-serif;
   color: #fff;
   background-color: #f4f4f4;
   padding-top: 80px;
+=======
+    font-family: 'Poppins', sans-serif;
+    color: #fff;
+    background-color: #f4f4f4;
+    padding-top: 100px; /* Ajustado para acomodar logo maior */
+>>>>>>> 3646766170c1929fc2e078d42ca4b273a3f70478
 }
 
 /* Menu fixo no topo */
 header {
+<<<<<<< HEAD
   background-color: #fff;
   padding: 20px 0;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -26,6 +34,15 @@ header {
   top: 0;
   width: 100%;
   z-index: 1000;
+=======
+    background-color: #fff;
+    padding: 15px 0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+>>>>>>> 3646766170c1929fc2e078d42ca4b273a3f70478
 }
 
 nav {
@@ -37,11 +54,21 @@ nav {
   padding: 0 20px;
 }
 
+<<<<<<< HEAD
 .logo {
   font-size: 2rem;
   font-weight: 700;
   color: #000;
   letter-spacing: 2px;
+=======
+/* Logo como imagem responsiva */
+.logo img {
+    height: 80px;
+    width: auto;
+    display: block;
+    max-height: 100px;
+    transition: height 0.3s ease;
+>>>>>>> 3646766170c1929fc2e078d42ca4b273a3f70478
 }
 
 /* Ícone de menu hamburguer */
@@ -73,6 +100,7 @@ nav {
   letter-spacing: 1px;
 }
 
+<<<<<<< HEAD
 .contact-btn {
   padding: 12px 24px;
   border: 2px solid #000;
@@ -82,6 +110,8 @@ nav {
   border-radius: 4px;
 }
 
+=======
+>>>>>>> 3646766170c1929fc2e078d42ca4b273a3f70478
 /* Hero Section */
 .hero {
   background-image: url('https://www.publicdomainpictures.net/pictures/310000/velka/wooden-bacground.jpg');
@@ -124,7 +154,11 @@ nav {
   background-color: #218838;
 }
 
+<<<<<<< HEAD
 /* Seção de Qualidade */
+=======
+/* Nova seção de qualidade */
+>>>>>>> 3646766170c1929fc2e078d42ca4b273a3f70478
 .quality-section {
   display: flex;
   align-items: center;
@@ -190,6 +224,7 @@ nav {
   border-radius: 8px;
 }
 
+<<<<<<< HEAD
 /* Seção de Produtos */
 .products-section {
   padding: 20px 0;
@@ -207,6 +242,23 @@ nav {
   -webkit-overflow-scrolling: touch;
   gap: 15px;
   padding: 10px;
+=======
+/* Cards de Produtos */
+.product-cards {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    width: 30%;
+    transition: transform 0.3s ease;
+>>>>>>> 3646766170c1929fc2e078d42ca4b273a3f70478
 }
 
 .product-carousel .card {
@@ -318,6 +370,53 @@ nav {
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
 
+<<<<<<< HEAD
+=======
+/* Estilos do carrossel */
+.products-section {
+    padding: 20px 0;
+}
+
+.section-header .quality-text {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.product-carousel {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+    gap: 15px;
+    padding: 10px;
+}
+
+.product-carousel .card {
+    flex: 0 0 300px;
+    scroll-snap-align: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+.product-carousel .card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.product-carousel .card-content {
+    padding: 15px;
+    text-align: center;
+}
+
+.product-carousel .card:hover {
+    transform: scale(1.05);
+}
+
+>>>>>>> 3646766170c1929fc2e078d42ca4b273a3f70478
 /* Botão Flutuante WhatsApp */
 .whatsapp-button {
   position: fixed;
@@ -344,6 +443,7 @@ nav {
   transform: scale(1.1);
 }
 
+<<<<<<< HEAD
 /* RESPONSIVIDADE */
 @media (max-width: 768px) {
   .menu-toggle {
@@ -432,3 +532,73 @@ nav {
   width: auto;
   object-fit: contain;
 }
+=======
+/* Responsividade */
+@media (max-width: 768px) {
+    .menu-toggle {
+        display: flex;
+    }
+
+    .nav-links {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #fff;
+        position: absolute;
+        top: 100px;
+        left: 0;
+        z-index: 999;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        padding: 10px 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 3rem;
+    }
+
+    .hero-content p {
+        font-size: 1.5rem;
+    }
+
+    .cta-btn {
+        padding: 12px 24px;
+        font-size: 1rem;
+    }
+
+    .quality-section {
+        flex-direction: column;
+    }
+
+    .quality-text {
+        padding-right: 0;
+        text-align: center;
+    }
+
+    .quality-image {
+        margin-top: 20px;
+    }
+
+    /* Logo menor no mobile */
+    .logo img {
+        height: 60px;
+    }
+
+    .whatsapp-button {
+        width: 50px;
+        height: 50px;
+        bottom: 15px;
+        right: 15px;
+    }
+
+    .whatsapp-button img {
+        width: 35px;
+        height: 35px;
+    }
+}
+>>>>>>> 3646766170c1929fc2e078d42ca4b273a3f70478
