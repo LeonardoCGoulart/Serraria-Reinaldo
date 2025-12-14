@@ -465,3 +465,57 @@ nav {
     }
   }
 }
+
+/* =========================================
+   FOOTER / CRÉDITOS
+========================================= */
+.site-footer {
+  background: #111;
+  padding: 18px 20px;
+  text-align: center;
+}
+
+.footer-credits p {
+  color: #bbb;
+  font-size: 0.9rem;
+}
+
+.credit-link {
+  color: #fff;
+  font-weight: 600;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+/* efeito hover desktop */
+.credit-link:hover {
+  color: #28a745;
+}
+
+/* dica visual ao passar o mouse */
+.credit-link::after {
+  content: " • WhatsApp";
+  opacity: 0;
+  font-size: 0.8rem;
+  color: #25d366;
+  transition: opacity 0.2s ease;
+}
+
+.credit-link:hover::after {
+  opacity: 1;
+}
+
+/* =========================================
+   MOBILE — mantém simples (sem hover fake)
+========================================= */
+@media (max-width: 768px) {
+  .credit-link::after {
+    display: none;
+  }
+
+  .footer-credits p {
+    font-size: 0.85rem;
+    line-height: 1.5;
+  }
+}
