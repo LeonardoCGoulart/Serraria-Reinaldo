@@ -1,7 +1,7 @@
 /* =========================================
    FONTES E CONFIGURAÇÕES GERAIS
 ========================================= */
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap');
 
 * {
   margin: 0;
@@ -9,24 +9,28 @@
   box-sizing: border-box;
 }
 
-html, body { overflow-x: hidden; }
+html, body {
+  overflow-x: hidden;
+}
 
 body {
   font-family: 'Poppins', sans-serif;
   color: #111;
   background-color: #f4f4f4;
-  padding-top: 0; /* espaço para o header fixo */
 }
 
 /* =========================================
-   HEADER / NAVBAR
+   HEADER / NAVBAR (FIXO E PROFISSIONAL)
 ========================================= */
 header {
-  background-color: #ddd;
   position: fixed;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 1000;
-  border-bottom: 2px solid #000;
+  background: rgba(221, 221, 221, 0.95);
+  backdrop-filter: blur(6px);
+  border-bottom: 1px solid rgba(0,0,0,0.15);
   padding: 12px 0;
 }
 
@@ -67,11 +71,9 @@ nav {
 .menu-toggle.is-active .bar:nth-child(1) {
   transform: translateY(7px) rotate(45deg);
 }
-
 .menu-toggle.is-active .bar:nth-child(2) {
   opacity: 0;
 }
-
 .menu-toggle.is-active .bar:nth-child(3) {
   transform: translateY(-7px) rotate(-45deg);
 }
@@ -85,27 +87,28 @@ nav {
 }
 
 .nav-links li a {
-  color: #000 !important;
-  font-weight: 600;
+  color: #000;
+  font-weight: 500;
   text-decoration: none;
   font-size: 1rem;
-  transition: 0.2s;
+  transition: color .2s ease, transform .2s ease;
 }
 
 .nav-links li a:hover {
-  transform: scale(1.08);
-  color: #ffd47f;
+  transform: translateY(-2px);
+  color: #28a745;
 }
 
 /* =========================================
-   HERO
+   HERO (SEM FAIXA BRANCA + OVERLAY)
 ========================================= */
 .hero {
+  position: relative;
+  margin-top: 110px;                 /* compensa header fixo */
+  height: calc(100vh - 110px);
   background-image: url('https://www.publicdomainpictures.net/pictures/310000/velka/wooden-bacground.jpg');
   background-size: cover;
   background-position: center;
-  height: calc(100vh - 110px);
-  margin-top: 110px; /* mesma altura visual do header */
   display: flex;
   justify-content: center;
   align-items: center;
@@ -113,32 +116,58 @@ nav {
   padding: 30px 20px;
 }
 
+/* overlay escuro profissional */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    rgba(0,0,0,0.55),
+    rgba(0,0,0,0.45)
+  );
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 900px;
+}
+
 .hero-content h1 {
-  font-size: 3.6rem;
-  color: #fff !important;
+  font-size: 3rem;
+  font-weight: 700;
+  letter-spacing: -0.5px;
+  color: #fff;
+  margin-bottom: 10px;
 }
 
 .hero-content p {
-  font-size: 1.4rem;
-  color: #fff;
-  margin-bottom: 15px;
+  font-size: 1.3rem;
+  color: #f1f1f1;
+  margin-bottom: 20px;
 }
 
 .cta-btn {
   background-color: #28a745;
   color: #fff;
-  padding: 12px 22px;
+  padding: 14px 26px;
   text-decoration: none;
   border-radius: 8px;
   display: inline-block;
   font-weight: 700;
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.cta-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 18px rgba(0,0,0,0.25);
 }
 
 /* =========================================
    SEÇÃO QUALIDADE
 ========================================= */
 .quality-section {
-  padding: 48px 0;
+  padding: 60px 0;
   background: #fff;
 }
 
@@ -162,13 +191,13 @@ nav {
 
 .quality-text h3 {
   font-size: 2rem;
-  margin-bottom: 10px;
+  margin-bottom: 12px;
 }
 
 .quality-text p {
   color: #333;
   line-height: 1.6;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 .cta-link {
@@ -189,31 +218,33 @@ nav {
 }
 
 /* =========================================
-   PRODUTOS (CARROSSEL REAL DO SEU SITE)
+   PRODUTOS (CARROSSEL)
 ========================================= */
 .products-section {
-  padding: 20px 0;
+  padding: 40px 0;
 }
 
 .product-carousel {
   display: flex;
   overflow-x: auto;
   gap: 16px;
-  padding: 8px;
+  padding: 12px;
   scroll-snap-type: x mandatory;
 }
 
 .card {
   flex: 0 0 300px;
   background: #fff;
-  border-radius: 10px;
+  border-radius: 12px;
   overflow: hidden;
   scroll-snap-align: center;
-  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-  transition: 0.2s;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.12);
+  transition: transform .2s ease;
 }
 
-.card:hover { transform: translateY(-6px); }
+.card:hover {
+  transform: translateY(-6px);
+}
 
 .card img {
   width: 100%;
@@ -222,7 +253,7 @@ nav {
 }
 
 .card-content {
-  padding: 14px;
+  padding: 16px;
   text-align: center;
 }
 
@@ -230,7 +261,7 @@ nav {
    LOCALIZAÇÃO
 ========================================= */
 .location-section {
-  padding: 50px 0;
+  padding: 60px 0;
   background: #f9f9f9;
 }
 
@@ -248,14 +279,16 @@ nav {
   gap: 20px;
 }
 
-.contact-info { flex: 1; }
+.contact-info {
+  flex: 1;
+}
 
 .map-iframe {
   flex: 1;
   width: 100%;
   height: 450px;
   border: 0;
-  border-radius: 8px;
+  border-radius: 10px;
 }
 
 /* =========================================
@@ -272,6 +305,7 @@ nav {
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 999;
 }
 
 .whatsapp-button img {
@@ -279,46 +313,53 @@ nav {
 }
 
 /* =========================================
-   MOBILE
+   MOBILE (NÃO QUEBRA)
 ========================================= */
 @media (max-width: 768px) {
 
-  /* hero menor */
-  .hero {
-    margin-top: 90px;
-    height: calc(60vh - 90px);
+  .logo img {
+    height: 60px;
   }
 
-  .hero-content h1 { font-size: 2.4rem; }
-  .hero-content p { font-size: 1.1rem; }
-
-  /* menu mobile */
-  .menu-toggle { display: flex; }
+  .menu-toggle {
+    display: flex;
+  }
 
   .nav-links {
     display: none;
     flex-direction: column;
     position: absolute;
     top: 100%;
-    left: 0; right: 0;
+    left: 0;
+    right: 0;
     background: #ddd;
   }
 
-  .nav-links.active { display: flex; }
+  .nav-links.active {
+    display: flex;
+  }
 
   .nav-links li a {
-    color: #000;
-    padding: 12px 20px;
+    padding: 14px 20px;
   }
 
-  /* layout vira coluna */
-  .container {
+  .hero {
+    margin-top: 90px;
+    height: calc(60vh - 90px);
+  }
+
+  .hero-content h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-content p {
+    font-size: 1.1rem;
+  }
+
+  .container,
+  .location-container {
     flex-direction: column;
     text-align: center;
-  }
-
-  .quality-text p {
-    text-align: left;
   }
 
   .quality-image img {
@@ -326,56 +367,101 @@ nav {
     margin: 0 auto;
   }
 
-  /* localização empilhada */
-  .location-container {
-    flex-direction: column;
-    text-align: center;
-  }
-
   .map-iframe {
     height: 320px;
   }
 
-  .logo img { height: 60px; }
-
-  /* ————————————————
-     CORREÇÃO DO CARROSSEL NO CELULAR
-  ———————————————— */
   .product-carousel {
-    display: flex;
-    overflow-x: auto;
-    gap: 16px;
-    scroll-snap-type: x mandatory;
     padding: 10px;
-    width: 100%;
   }
 
   .card {
     flex: 0 0 85%;
     max-width: 85%;
-    scroll-snap-align: center;
   }
 
   .card img {
-    width: 100%;
     height: 180px;
-    object-fit: cover;
   }
 }
 
 /* =========================================
-   PC — GARANTE LADO A LADO
+   DESKTOP — GARANTE LADO A LADO
 ========================================= */
 @media (min-width: 769px) {
-
   .container,
   .location-container {
-    flex-direction: row !important;
-    align-items: center !important;
-    text-align: left !important;
+    flex-direction: row;
+    align-items: center;
+    text-align: left;
+  }
+}
+
+@media (max-width: 768px) {
+  .products-section .container {
+    display: block;
   }
 
-  .quality-image img {
-    max-width: 450px !important;
+  .product-carousel {
+    display: flex;
+    gap: 16px;
+    padding: 16px 12px;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .product-carousel .card {
+    flex: 0 0 88%;
+    max-width: 88%;
+    scroll-snap-align: center;
+  }
+}
+
+@media (max-width: 768px) {
+
+  .nav-links {
+    background: #f2f2f2;
+    border-top: 1px solid rgba(0,0,0,0.12);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+  }
+
+  .nav-links li {
+    width: 100%;
+    border-bottom: 1px solid rgba(0,0,0,0.12);
+  }
+
+  .nav-links li:last-child {
+    border-bottom: none;
+  }
+
+  .nav-links li a {
+    width: 100%;
+    padding: 16px 22px;
+    display: flex;
+    align-items: center;
+    font-size: 1.05rem;
+    font-weight: 600;
+  }
+
+  .nav-links li a:active {
+    background: rgba(0,0,0,0.06);
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    animation: slideDown .25s ease forwards;
+  }
+
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
   }
 }
