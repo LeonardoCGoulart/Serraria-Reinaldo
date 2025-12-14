@@ -519,3 +519,65 @@ nav {
     line-height: 1.5;
   }
 }
+
+/* ajuste texto CSS formatacao */
+/* =========================================
+   MELHORIA DE LEITURA — MOBILE FIRST
+========================================= */
+@media (max-width: 768px) {
+
+  .quality-section {
+    padding: 40px 0;
+  }
+
+  .quality-text {
+    max-width: 340px;
+    margin: 0 auto;
+  }
+
+  /* subtítulo */
+  .quality-text h2 {
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+
+  /* título principal */
+  .quality-text h3 {
+    font-size: 1.45rem;
+    line-height: 1.35;
+    margin-bottom: 18px;
+    font-weight: 700;
+  }
+
+  /* texto */
+  .quality-text p {
+    font-size: 0.95rem;
+    line-height: 1.85;
+    color: #555;
+    margin-bottom: 20px;
+  }
+
+  /* cria pausa visual automática */
+  .quality-text p::after {
+    content: "";
+    display: block;
+    height: 8px;
+  }
+
+  /* CTA */
+  .cta-link {
+    display: inline-block;
+    margin-top: 12px;
+    font-size: 1rem;
+    padding-bottom: 2px;
+  }
+
+  /* imagem */
+  .quality-image img {
+    margin-top: 24px;
+    border-radius: 10px;
+  }
+}
+
